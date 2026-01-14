@@ -1,0 +1,23 @@
+<h1>Exceptional Invitations</h1>
+<ul class="invitations-list">
+  <li
+    *ngFor="let exceptionalInvitation of exceptionalInvitations()"
+    class="invitation-card"
+  >
+    <div class="info-group">
+      <p class="name">Customer: {{ exceptionalInvitation.customerName }}</p>
+      <p class="price">
+        Price: {{ exceptionalInvitation.totalPrice | currency }}
+      </p>
+    </div>
+
+    <div class="actions">
+      <button class="btn-approve" (click)="approve(exceptionalInvitation.id)">
+        Approve
+      </button>
+      <button class="btn-reject" (click)="reject(exceptionalInvitation.id)">
+        Reject
+      </button>
+    </div>
+  </li>
+</ul>
